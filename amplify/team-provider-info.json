@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-expo-dev-191130-authRole",
+      "UnauthRoleArn": "arn:aws:iam::524405517764:role/amplify-expo-dev-191130-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::524405517764:role/amplify-expo-dev-191130-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-expo-dev-191130-deployment",
+      "UnauthRoleName": "amplify-expo-dev-191130-unauthRole",
+      "StackName": "amplify-expo-dev-191130",
+      "StackId": "arn:aws:cloudformation:us-east-1:524405517764:stack/amplify-expo-dev-191130/89685f60-9ddf-11ed-b457-1234973eb8a7",
+      "AmplifyAppId": "d1uw2b7rk2vwip"
+    },
+    "categories": {
+      "auth": {
+        "expoeastesting": {
+          "googleClientId": "541264766868-vei0r49i7oq6f9qdoh4kmv8vca3i00p7.apps.googleusercontent.com",
+          "appleAppId": "com.nadetastic.dxe-test"
+        }
+      }
+    }
+  }
+}

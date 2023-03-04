@@ -1,0 +1,51 @@
+{
+  "auth": {
+    "expoeastesting": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [
+          "GOOGLE",
+          "APPLE"
+        ],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_expoeastesting_appleAppId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "expoeastesting"
+        }
+      ]
+    },
+    "AMPLIFY_auth_expoeastesting_googleClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "expoeastesting"
+        }
+      ]
+    }
+  }
+}
