@@ -1,44 +1,54 @@
 import { Auth } from 'aws-amplify';
 
-export async function signIn(userInfo) {
+
+
+export async function signIn(userInfo,setAlert) {
 
     try {
         const user = await Auth.signIn(userInfo.username, userInfo.password);
         console.log(user)
-        return user;
+        setAlert({msg:user.attributes.email})
     } catch (error) {
-        console.log('error signing in', error);
-        return error;
+        console.log('error signing in ====>>>>>', error);
+        setAlert({msg:error})
     }
 }
 
-export async function signOut() {
+export async function signOut(setAlert) {
     try {
         await Auth.signOut();
+        console.log('success signing out!');
+        setAlert({msg:'success signing out!'});
     } catch (error) {
         console.log('error signing out: ', error);
+        setAlert({msg:error});
     }
 }
 
-export async function signUp(userInfo) {
+export async function signUp(userInfo,setAlert) {
     try {
         const { user } = await Auth.signUp({
             username: userInfo.username,
             password: userInfo.password,
         });
-        console.log(user);
-        return user;
+        // console.log(user);
+        // return user;
+        setAlert({msg:user});
     } catch (error) {
-        console.log('error signing up:', error);
-        return error;
+        // console.log('error signing up:', error);
+        // return error;
+        setAlert({msg:error});
     }
 }
 
-export async function confirmSignUp(userInfo) {
+export async function confirmSignUp(userInfo,setAlert) {
     try {
         await Auth.confirmSignUp(userInfo.username, userInfo.authCode);
+        console.log('success signing up!');
+        setAlert({msg:'success signing up!'});
     } catch (error) {
         console.log('error confirming sign up', error);
+        setAlert({msg:error});
     }
 }
 
@@ -52,12 +62,16 @@ export async function socialSignIn(provider) {
     }
 }
 
-export async function currentUser(){
+export async function currentUser(setAlert){
+
     try {
         const user = await Auth.currentAuthenticatedUser();
+        console.log(user)
+        setAlert({msg:user.attributes.email});
         return user;
     } catch (error) {
         console.log('error getting current user', error);
+        setAlert({msg:error});
         return error;
     }
 }

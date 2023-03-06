@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "expo",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authexpoeastesting",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

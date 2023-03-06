@@ -17,6 +17,12 @@
           "googleClientId": "541264766868-vei0r49i7oq6f9qdoh4kmv8vca3i00p7.apps.googleusercontent.com",
           "appleAppId": "com.nadetastic.dxe-test"
         }
+      },
+      "storage": {
+        "expoapp": {}
+      },
+      "api": {
+        "expo": {}
       }
     }
   }

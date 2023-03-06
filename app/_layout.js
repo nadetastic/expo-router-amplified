@@ -2,6 +2,7 @@ import { Slot } from "expo-router";
 import { View, StatusBar } from 'react-native';
 import Navigation from '../components/nav';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { AlertProvider } from '../context/alert';
 
 import styles from "../styles";
 export default function AppLayout() {
@@ -9,7 +10,10 @@ export default function AppLayout() {
         <SafeAreaView>
             <View style={styles.container}>
             <Navigation />
-            <Slot />
+            <AlertProvider>
+                <Slot />
+            </AlertProvider>
+
             <StatusBar style="auto" />
         </View>
         </SafeAreaView>
