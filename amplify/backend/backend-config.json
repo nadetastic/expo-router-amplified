@@ -32,6 +32,20 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+    },
+    "expoeas": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "expoeas"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
     }
   },
   "auth": {
@@ -65,6 +79,13 @@
       "service": "Cognito"
     }
   },
+  "function": {
+    "expoeas": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "parameters": {
     "AMPLIFY_auth_expoeastesting_appleAppId": {
       "usedBy": [
@@ -79,6 +100,22 @@
         {
           "category": "auth",
           "resourceName": "expoeastesting"
+        }
+      ]
+    },
+    "AMPLIFY_function_expoeas_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "expoeas"
+        }
+      ]
+    },
+    "AMPLIFY_function_expoeas_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "expoeas"
         }
       ]
     }

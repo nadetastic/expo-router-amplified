@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-expo-dev-191130-unauthRole",
       "StackName": "amplify-expo-dev-191130",
       "StackId": "arn:aws:cloudformation:us-east-1:524405517764:stack/amplify-expo-dev-191130/89685f60-9ddf-11ed-b457-1234973eb8a7",
-      "AmplifyAppId": "d1uw2b7rk2vwip"
+      "AmplifyAppId": "d1uw2b7rk2vwip",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-expo-dev-191130-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
@@ -23,6 +24,12 @@
       },
       "api": {
         "expo": {}
+      },
+      "function": {
+        "expoeas": {
+          "deploymentBucketName": "amplify-expo-dev-191130-deployment",
+          "s3Key": "amplify-builds/expoeas-32584d484a444c486638-build.zip"
+        }
       }
     }
   }
