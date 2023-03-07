@@ -1,44 +1,52 @@
 import { API } from "aws-amplify";
 
 
-const apiName = "api";
+const apiName = "expoeas";
 
-export function get(){
+export async function get(setAlert){
     try {
-        const items = API.get(apiName, "/items");
+        const items = await API.get(apiName, "/items");
+        setAlert({msg:items})
         return items;
     } catch (error) {
         console.log("Error getting items", error);
+        setAlert({msg:error})
         return error;
     }
 }
 
-export function post(item){
+export async function post(setAlert){
     try {
-        const newItem = API.post(apiName, "/items", {body: item});
+        const newItem = await API.post(apiName, "/items", {body: {}});
+        setAlert({msg:newItem})
         return newItem;
     } catch (error) {
         console.log("Error posting item", error);
+        setAlert({msg:error})
         return error;
     }
 }
 
-export function put(item){
+export async function put(setAlert){
     try {
-        const updatedItem = API.put(apiName, `/items/${item.id}`, {body: item});
+        const updatedItem = await API.put(apiName, "/items");
+        setAlert({msg:updatedItem})
         return updatedItem;
     } catch (error) {
         console.log("Error putting item", error);
+        setAlert({msg:error})
         return error;
     }
 }
 
-export function del(item){
+export async function del(setAlert){
     try {
-        const deletedItem = API.del(apiName, `/items/${item.id}`);
+        const deletedItem = await API.del(apiName, "/items");
+        setAlert({msg:deletedItem})
         return deletedItem;
     } catch (error) {
         console.log("Error deleting item", error);
+        setAlert({msg:error})
         return error;
     }
 }

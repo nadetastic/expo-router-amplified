@@ -1,6 +1,7 @@
 import "expo-router/entry";
 import { Amplify } from 'aws-amplify'
-import awsconfig from './src/aws-exports'
+// import awsconfig from './src/aws-exports'
+import awsconfig from './src/expo-config'
 import * as WebBrowser from "expo-web-browser";
 
 Amplify.Logger.LOG_LEVEL = 'DEBUG'

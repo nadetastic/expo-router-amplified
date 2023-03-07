@@ -21,12 +21,18 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kiunakoncepts.eas_amplified"
     },
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "scheme": "myapp"
+    "scheme": "myapp",
+    "extra": {
+      "eas": {
+        "projectId": "d1fa8e9a-3af5-4699-bcd7-b8009b315f0d"
+      }
+    }
   }
 }

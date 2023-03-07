@@ -8,9 +8,11 @@ export async function signIn(userInfo,setAlert) {
         const user = await Auth.signIn(userInfo.username, userInfo.password);
         console.log(user)
         setAlert({msg:user.attributes.email})
+        return
     } catch (error) {
         console.log('error signing in ====>>>>>', error);
         setAlert({msg:error})
+        return
     }
 }
 
@@ -19,9 +21,11 @@ export async function signOut(setAlert) {
         await Auth.signOut();
         console.log('success signing out!');
         setAlert({msg:'success signing out!'});
+        return
     } catch (error) {
         console.log('error signing out: ', error);
         setAlert({msg:error});
+        return
     }
 }
 
@@ -34,10 +38,12 @@ export async function signUp(userInfo,setAlert) {
         // console.log(user);
         // return user;
         setAlert({msg:user});
+        return
     } catch (error) {
         // console.log('error signing up:', error);
         // return error;
         setAlert({msg:error});
+        return
     }
 }
 
@@ -46,9 +52,11 @@ export async function confirmSignUp(userInfo,setAlert) {
         await Auth.confirmSignUp(userInfo.username, userInfo.authCode);
         console.log('success signing up!');
         setAlert({msg:'success signing up!'});
+        return;
     } catch (error) {
         console.log('error confirming sign up', error);
         setAlert({msg:error});
+        return;
     }
 }
 
@@ -68,10 +76,10 @@ export async function currentUser(setAlert){
         const user = await Auth.currentAuthenticatedUser();
         console.log(user)
         setAlert({msg:user.attributes.email});
-        return user;
+        return true;
     } catch (error) {
         console.log('error getting current user', error);
         setAlert({msg:error});
-        return error;
+        return false;
     }
 }
