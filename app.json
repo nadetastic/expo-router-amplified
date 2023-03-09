@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kiunakoncepts.eas-amplified"
     },
     "android": {
       "adaptiveIcon": {
@@ -33,6 +34,19 @@
       "eas": {
         "projectId": "d1fa8e9a-3af5-4699-bcd7-b8009b315f0d"
       }
+    },
+    "plugins": ["sentry-expo"],
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "",
+            "project": "",
+            "authToken": ""
+          }
+        }
+      ]
     }
   }
 }
